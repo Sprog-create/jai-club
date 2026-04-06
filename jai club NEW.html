@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jai club official signal</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '922952927118312');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=922952927118312&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #050a14;
+      --card: #0c1526;
+      --accent: #00d4ff;
+      --accent2: #ff6b35;
+      --gold: #ffd700;
+      --green: #00ff88;
+      --text: #e8f4ff;
+      --muted: #8ba3c0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Animated background stars */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(0,212,255,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,107,53,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(0,255,136,0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      animation: twinkle var(--d) ease-in-out infinite alternate;
+      opacity: 0;
+    }
+    @keyframes twinkle {
+      from { opacity: 0; transform: scale(0.8); }
+      to   { opacity: var(--o); transform: scale(1.2); }
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      padding: 30px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* Logo */
+    .center-img {
+      animation: fadeDown 0.7s ease both;
+    }
+    .logo-wrap img {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 24px rgba(0,212,255,0.5));
+      border-radius: 28px;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-30px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* Rocket badge */
+    .rocket-badge {
+      margin-top: -10px;
+      font-size: 2.8rem;
+      animation: rocketFloat 2.5s ease-in-out infinite;
+    }
+    @keyframes rocketFloat {
+      0%,100% { transform: translateY(0) rotate(-10deg); }
+      50%      { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    /* Title */
+    .title-block {
+      text-align: center;
+      margin-top: 10px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+    .title-block h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.5rem, 6vw, 2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      background: linear-gradient(135deg, #00d4ff 0%, #ffffff 50%, #ffd700 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+    }
+    .title-block .rocket-inline { font-size: 1.6rem; }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(20px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* Subscribers pill */
+    .subs-pill {
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,212,255,0.1);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      animation: fadeUp 0.7s 0.35s ease both;
+    }
+    .subs-pill .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform:scale(1); opacity:1; }
+      50%      { transform:scale(1.5); opacity:0.6; }
+    }
+
+    /* Feature cards */
+    .features {
+      width: 100%;
+      margin-top: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      animation: fadeUp 0.7s 0.5s ease both;
+    }
+    .feat {
+      background: var(--card);
+      border: 1px solid rgba(0,212,255,0.12);
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .feat:hover {
+      border-color: rgba(0,212,255,0.4);
+      transform: translateX(4px);
+    }
+    .feat .icon { font-size: 1.8rem; flex-shrink: 0; }
+    .feat .feat-text {}
+    .feat .feat-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .feat .feat-desc {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 2px;
+    }
+
+    /* Hindi note */
+    .hindi-note {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gold);
+      background: rgba(255,215,0,0.07);
+      border: 1px solid rgba(255,215,0,0.2);
+      border-radius: 12px;
+      padding: 12px 20px;
+      animation: fadeUp 0.7s 0.65s ease both;
+      line-height: 1.5;
+    }
+
+    /* CTA Button */
+    .cta-wrap {
+      width: 100%;
+      margin-top: 26px;
+      animation: fadeUp 0.7s 0.8s ease both;
+    }
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, #0099cc 0%, #00d4ff 50%, #00bbee 100%);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(0,212,255,0.35), 0 0 0 0 rgba(0,212,255,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: btnGlow 2.5s ease-in-out infinite;
+    }
+    @keyframes btnGlow {
+      0%,100% { box-shadow: 0 8px 32px rgba(0,212,255,0.35), 0 0 0 0 rgba(0,212,255,0.3); }
+      50%      { box-shadow: 0 8px 48px rgba(0,212,255,0.6), 0 0 0 8px rgba(0,212,255,0.08); }
+    }
+    .cta-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+    .cta-btn:active { transform: scale(0.98); }
+    .cta-btn .tg-icon { font-size: 1.3rem; }
+
+    /* Invite note */
+    .invite-note {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      animation: fadeUp 0.7s 0.95s ease both;
+    }
+    .invite-note strong { color: var(--text); }
+
+    /* ── Mobile-first responsive tweaks ── */
+    @media (max-width: 480px) {
+      .wrapper { padding: 22px 16px 50px; gap: 0; }
+      .logo-wrap img { width: 130px; height: 130px; }
+      .title-block h1 { font-size: 1.35rem; }
+      .feat { padding: 13px 16px; }
+      .feat .icon { font-size: 1.5rem; }
+      .cta-btn { font-size: 0.9rem; padding: 16px; letter-spacing: 1.5px; }
+      .hindi-note { font-size: 0.95rem; padding: 10px 16px; }
+      .subs-pill { font-size: 0.88rem; padding: 5px 14px; }
+    }
+    @media (max-width: 360px) {
+      .title-block h1 { font-size: 1.15rem; }
+      .logo-wrap img { width: 110px; height: 110px; }
+    }
+    /* Tap highlight removal for mobile */
+    a, button { -webkit-tap-highlight-color: transparent; }
+    /* Ensure full-width on all phones */
+    html { width: 100%; }
+
+    /* Footer divider */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      border-radius: 3px;
+      margin: 30px auto 0;
+      animation: fadeUp 0.7s 1.1s ease both;
+    }
+  </style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="wrapper">
+
+  <!-- Logo -->
+  <div class="logo-wrap">
+    <img src="logo.jpeg" class="center-img">
+  </div>
+
+  <div class="rocket-badge">🚀</div>
+
+  <!-- Title -->
+  <div class="title-block">
+    <h1>JAI CLUB OFFICIAL <br>SIGNAL <span class="rocket-inline">🚀</span></h1>
+  </div>
+
+  <!-- Subscribers -->
+  <div class="subs-pill">
+    <span class="dot"></span>
+    14,403 Subscribers
+  </div>
+
+  <!-- Features -->
+  <div class="features">
+    <div class="feat">
+      <div class="icon">🚨</div>
+      <div class="feat-text">
+        <div class="feat-label">Updated Daily</div>
+        <div class="feat-desc">Daily Signal Alerts</div>
+      </div>
+    </div>
+    <div class="feat">
+      <div class="icon">📡</div>
+      <div class="feat-text">
+        <div class="feat-label">Always Online</div>
+        <div class="feat-desc">24×7 Live Updates</div>
+      </div>
+    </div>
+    <div class="feat">
+      <div class="icon">🚨</div>
+      <div class="feat-text">
+        <div class="feat-label">No Cost</div>
+        <div class="feat-desc">Free Signal — Always</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hindi note -->
+  <div class="hindi-note">
+    सभी सिग्नल फ्री मैं दिये जाते है ।
+  </div>
+
+  <!-- CTA Button -->
+  <div class="cta-wrap">
+    <a href="https://t.me/+-POJMW9hR8EzMGM1" class="cta-btn" target="_blank" rel="noopener">
+      <span class="tg-icon">✈️</span>
+      JOIN CHANNEL
+    </a>
+  </div>
+
+  <!-- Invite note -->
+  <p class="invite-note">
+    You are invited to the channel <strong>Jai club official signal 🚀</strong>.<br>
+    Click above to join.
+  </p>
+
+  <div class="divider"></div>
+</div>
+
+<script>
+  // Generate twinkling stars
+  const container = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2.5 + 0.5;
+    s.style.cssText = `
+      left:${Math.random()*100}%;
+      top:${Math.random()*100}%;
+      width:${size}px;
+      height:${size}px;
+      --d:${(Math.random()*3+1.5).toFixed(1)}s;
+      --o:${(Math.random()*0.6+0.1).toFixed(2)};
+      animation-delay:${(Math.random()*4).toFixed(1)}s;
+    `;
+    container.appendChild(s);
+  }
+</script>
+</body>
+</html>
